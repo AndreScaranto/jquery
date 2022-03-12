@@ -25,14 +25,38 @@
 			
 			nav li:first-child 	{ background-image:url(imagem/futebol.png) } 
 			nav li:nth-child(2) { background-image:url(imagem/basquete.png) }
-					
+			
+			#div1 {
+				width:400px;
+				height:1200px;
+				background-color:bisque;
+				float:right;
+			}
+
+			#div2 {
+				width:400px;
+				height:1000px;
+				background-color:cornflowerblue;
+				float:right;
+			}
+			
         </style>
          
-        <script src="jquery-3.2.1.min.js"></script>
-        <script>		
+        <script src="../jquery-3.6.0.min.js"></script>
+        <script>	
 			$( function(e) { 	
-
+				$('nav li:nth-child(1)').click( function(e) {
+					var top_div1 = $('#div1').offset().top;
+					$('html,body').animate( {scrollTop:top_div1},750);
+				});
+			});		
+			$( function(e) { 	
+				$('nav li:nth-child(2)').click( function(e) {
+					var top_div2 = $('#div2').offset().top;
+					$('html,body').animate( {scrollTop:top_div2},750);
+				});
 			});			
+	
 		</script>   
     </head>
     <body>
@@ -42,5 +66,7 @@
             	<li id="tela2"></li>
             </ul>
         </nav>
+		<div id="div1"></div>
+		<div id="div2"></div>
     </body>
 </html>
