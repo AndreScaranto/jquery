@@ -38,17 +38,27 @@
         <script>		
 			$( function(e) { 	
 
-				// eventos
-				$('nav li:nth-child(1)').click(function() {
-					$("html, body").animate({scrollTop: $('#primeira').offset().top }, 1000);				
-				});
-								
-				$('nav li:nth-child(2)').click(function() {
-					$("html, body").animate({scrollTop: $('#segunda').offset().top }, 1000);				
-				});
 
-				$('nav li:nth-child(3)').click(function() {
-					$("html, body").animate({scrollTop: $('#terceira').offset().top }, 1000);				
+				function redimensionar() {
+					var alturajanela = $(window).height();
+
+					$('div').css('height',alturajanela);
+				}
+
+				$('nav li:nth-child(1)').click(function(e) {
+                    $('html, body').animate( { scrollTop: $('#primeira').offset().top } , 1000 );
+                });				
+				$('nav li:nth-child(2)').click(function(e) {
+                    $('html, body').animate( { scrollTop: $('#segunda').offset().top } , 1000 );
+                });
+				$('nav li:nth-child(3)').click(function(e) {
+                    $('html, body').animate( { scrollTop: $('#terceira').offset().top } , 1000 );
+                });
+
+				redimensionar();
+
+				$(window).resize(function(e) {
+					redimensionar();
 				});
 
 			});			

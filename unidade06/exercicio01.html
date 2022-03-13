@@ -6,7 +6,19 @@
         
         <script src="../jquery-3.6.0.min.js"></script>
         <script>
-					
+            $(function() {
+                $('#cursohtml').click( function() {
+                    console.log("clicou no botão html");
+                });
+                $('#cursocss').on("click", function() {
+                    console.log("clicou no botão css");
+                });
+                function mostrarPassouMouse () {
+                    console.log("mouse passou no botão css");
+                    $('#cursocss').off("mouseover", mostrarPassouMouse);    
+                }
+                $('#cursocss').on("mouseover", mostrarPassouMouse);
+            });
 		</script>        
     </head>
 

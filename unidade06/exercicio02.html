@@ -9,7 +9,22 @@
         
         <script src="../jquery-3.6.0.min.js"></script>
         <script>
-			
+			$(function(e) {
+                esconderElemento();
+
+                $('#mostrar').on("click", mostrarElemento);
+
+                $('#esconder').on("click", esconderElemento);
+            });
+
+            function mostrarElemento(e){
+                $('#janela').show();
+            }
+
+            function esconderElemento(e){
+                $('#janela').hide();
+            }
+
 		</script>        
     </head>
 
