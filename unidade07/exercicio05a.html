@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <title>Curso jQuery Fundamental</title>
+        <style>
+			#janela { position:absolute; height:200px; background-color:#069;  }
+            #janela img {float:left}
+		</style>
+        
+        <script src="../jquery-3.6.0.min.js"></script>       
+        <script>
+            var count_imagem_atual = 1;
+
+			$( function(e) {
+                setInterval(moverFotos,2000);
+                setInterval(avancaCount,2000);
+			});	
+
+            function moverFotos(e) {
+                var largura_imagem = $('#janela img:nth-child('+ count_imagem_atual + ')').width();
+                console.log(count_imagem_atual);
+                console.log(largura_imagem);
+                $('#janela').animate({left:"-=" + largura_imagem},500);
+
+            }
+
+            function reiniciarFotos(e) {
+                var largura_janela = $('#janela').width();
+                console.log()
+                $('#janela').animate({left:"+=" + largura_janela},2000);
+
+            }
+
+            function avancaCount(e) {
+                count_imagem_atual++;
+                console.log($('#janela img'.length));
+                if (count_imagem_atual > $('#janela img').length) {
+                    count_imagem_atual = 1;
+                    reiniciarFotos()
+                }
+            }
+		</script>        
+    </head>
+
+    <body>
+        <div id="janela">
+            <img src="imagens/foto1.jpg">
+            <img src="imagens/foto2.jpg">
+            <img src="imagens/foto3.jpg">
+            <img src="imagens/foto4.jpg">
+            <img src="imagens/foto5.jpg">
+        </div>
+    </body>
+
+</html>

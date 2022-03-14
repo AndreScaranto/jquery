@@ -9,9 +9,16 @@
         
         <script src="../jquery-3.6.0.min.js"></script>
         <script>
-			$( function(e) {			
-
+			$( function(e) {
+                $('#direita').click(moverObjeto);		
+                
 			})
+
+            function moverObjeto () {
+                $('#janela').animate( {left:300,top:100}, 1000, "linear", function(e) {
+                    alert("finalizou");
+                })
+            }
 
 		</script>        
     </head>
