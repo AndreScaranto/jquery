@@ -12,7 +12,7 @@ Com base no [Curso Desenvolvedor Web Completo + 10 projetos](https://www.udemy.c
 
 unidade01: apresentação e arquivos de exercicios
 
-unidade02: o que é jQuery, site e API do jQuery, download do pacote.
+unidade02: o que é jQuery, site e API do jQuery, download do pacote - [Site do jQuery](https://jquery.com/).
 
 unidade03: adicionando o jquery na página, carregando elementos DOM, selecionar elementos atráves de atributos.
 
